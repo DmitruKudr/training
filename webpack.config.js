@@ -9,8 +9,8 @@ module.exports = {
         index: './src/index.js',
         requestFrame: './src/js/requestFrame.ts',
         timeoutAnimation: './src/js/timeoutAnimation.ts',
-        //sort: './src/js/sort.ts',
-        //worker: './src/js/worker.ts',
+        sort: './src/js/sort.ts',
+        worker: './src/js/worker.ts',
     },
     module: {
         rules: [
