@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "myfont";
+  src: url('../fonts/myfont.eot?t=1688644467047'); /* IE9*/
+  src: url('../fonts/myfont.eot?t=1688644467047#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("../fonts/myfont.woff2?t=1688644467047") format("woff2"),
+  url("../fonts/myfont.woff?t=1688644467047") format("woff"),
+  url('../fonts/myfont.ttf?t=1688644467047') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/myfont.svg?t=1688644467047#myfont') format('svg'); /* iOS 4.1- */
+}
+
+[class^="myfont-"], [class*=" myfont-"] {
+  font-family: 'myfont' !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.myfont-camera:before { content: "\ea01"; }
+.myfont-clock:before { content: "\ea02"; }
+.myfont-idea:before { content: "\ea03"; }
+.myfont-phone:before { content: "\ea04"; }
+
