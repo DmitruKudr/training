@@ -5,6 +5,10 @@
 }
 body {
     height: 100vh;
+}
+
+#root {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,12 +19,12 @@ body {
     border: 3px solid black;
     margin-top: 200px;
 
-    .menu-options {
+    &--menu_options {
         transition: .3s all ease-in-out;
         display: none;
     }
 
-    &:hover .menu-options {
+    &:hover &--menu_options {
         transition: .3s all ease-in-out;
         display: block;
     }

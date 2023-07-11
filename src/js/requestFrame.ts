@@ -1,4 +1,5 @@
-let width = 0;
+setTimeout(() => {
+    let width = 0;
 let height = 0;
 let speed = 3;
 let hop = 1;
@@ -24,3 +25,4 @@ function move() {
 }
 
 window.requestAnimationFrame(move);
+}, 100);

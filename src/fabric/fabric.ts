@@ -28,7 +28,7 @@ class GreenFactory implements AbstractFactory {
         menu.classList.add('menu');
         menu.innerText = 'hover me green';
 
-        menuOptions.classList.add('menu-options');
+        menuOptions.classList.add('menu--menu_options');
         menuOptions.style.backgroundColor = '#89e042';
 
         for(let i = 0; i < 5; i += 1) {
@@ -71,7 +71,7 @@ class RedFactory implements AbstractFactory {
         menu.classList.add('menu');
         menu.innerText = 'hover me red';
 
-        menuOptions.classList.add('menu-options');
+        menuOptions.classList.add('menu--menu_options');
         menuOptions.style.backgroundColor = 'rgb(240, 52, 52)';
 
         for(let i = 0; i < 5; i += 1) {
@@ -89,11 +89,15 @@ class RedFactory implements AbstractFactory {
     }
 }
 
-let block = document.getElementById('block2');
+
+document.addEventListener('DOMContentLoaded', () => {
+    let block = document.getElementById('block2');
 if(block) {
+    console.log('block hello!1');
     block.appendChild(new RedFactory().createSelect());
     block.appendChild(new GreenFactory().createSelect());
 
     block.appendChild(new RedFactory().createMenu());
     block.appendChild(new GreenFactory().createMenu());
 }
+});

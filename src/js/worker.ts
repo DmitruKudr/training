@@ -1,7 +1,11 @@
 self.onmessage = function(event) {
     const array = event.data;
     const sortedArray = sort(array);
-    self.postMessage(sortedArray);
+    //postMessage(sortedArray);
+
+    console.log('done:\n' + sortedArray);
+
+    return sortedArray;
 };
   
 
@@ -16,6 +20,6 @@ function sort(arr: number[]): number[] {
         }
     }
     
-    console.log('hi ' + arr);
+    //console.log('result:\n' + arr);
     return arr;
 }

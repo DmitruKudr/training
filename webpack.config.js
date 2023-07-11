@@ -6,11 +6,13 @@ const SvgToFontPlugin = require('svgtofont-webpack-plugin').default;
 module.exports = {
     entry: {
         fabric: './src/fabric/fabric.ts',
-        index: './src/index.js',
+        styles: './src/styles.js',
+        app: './src/react/App.tsx',
+        index: './src/react/index.tsx',
         requestFrame: './src/js/requestFrame.ts',
         timeoutAnimation: './src/js/timeoutAnimation.ts',
-        sort: './src/js/sort.ts',
-        worker: './src/js/worker.ts',
+        //sort: './src/js/sort.ts',
+        //worker: './src/js/worker.ts',
     },
     module: {
         rules: [
@@ -22,33 +24,26 @@ module.exports = {
                     'sass-loader',
                 ],
             },
+            // {
+            //     test: /\.(ts|js)x?$/,
+            //     exclude: /node_modules|dist/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //     }
+            // },  
             {
-                test: /\.ts$/,
+                test: /\.(ts|tsx)?$/,
                 use: 'ts-loader',
                 exclude: /node_modules|dist/,
             },
             {
                 test: /\.svg$/,
                 use: 'svg-url-loader',
-                //exclude: /dist/,
             },
-            // {
-            //     test: /\.font\.js/,
-            //     use: [
-            //         MiniCssExtractPlugin.loader,
-            //         {
-            //             loader: 'css-loader',
-            //             options: {
-            //                 url: false
-            //             }
-            //         },
-            //         'webfonts-loader'
-            //     ]
-            // },
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
         filename: '[name].js',
@@ -59,7 +54,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        // new MiniCssExtractPlugin(),
         new SvgToFontPlugin({
             src: __dirname + '/icons',
             dist: __dirname + '/fonts',

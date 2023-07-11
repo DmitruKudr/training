@@ -1,3 +1,5 @@
+setTimeout(() => {
+    
 const c1 = document.getElementById('c1');
 let position = 0;
 let flag = true;
@@ -7,7 +9,8 @@ setInterval(() => {
 	
     if(position < 0) {
         position = 50;
-    } else if(position > 550) {
+    } 
+    if(position > 550) {
         position = 500;
     }
 
@@ -18,3 +21,4 @@ setInterval(() => {
     flag = !flag;
 
 }, 200);
+}, 100);
